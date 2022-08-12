@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="6.0.7" />
+    <PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\media" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\README.md">
+      <Link>VisionDirector\README.md</Link>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\media\5bd0b891-ebd3-47ac-9b18-8f8d434f4649\5dd2f5ad-caea-4794-9724-e798fc0132fa\test-file-thumbnail-_2022-01-12_19-58-57.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\media\5bd0b891-ebd3-47ac-9b18-8f8d434f4649\5dd2f5ad-caea-4794-9724-e798fc0132fa\test-file_2022-01-12_19-58-57.mp4" />
+    <_ContentIncludedByDefault Remove="wwwroot\media\5bd0b891-ebd3-47ac-9b18-8f8d434f4649\5dd2f5ad-caea-4794-9724-e798fc0132fa\test-image_2022-01-12_19-58-57.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\media\5bd0b891-ebd3-47ac-9b18-8f8d434f4649\5dd2f5ad-caea-4794-9724-e798fc0132fa\test-file-thumbnail_2022-01-12_21-39-50.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\media\5bd0b891-ebd3-47ac-9b18-8f8d434f4649\5dd2f5ad-caea-4794-9724-e798fc0132fa\test-file_2022-01-12_21-39-50.mp4" />
+  </ItemGroup>
+
+</Project>

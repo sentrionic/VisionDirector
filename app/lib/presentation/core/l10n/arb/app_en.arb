@@ -1,0 +1,22 @@
+{
+  "startupTitle": "Collaborate on Vision Videos",
+  "projectsScreenBar": "Projects",
+  "invalidCredentials": "Invalid Credentials",
+  "serverError": "Server Error. Try again later.",
+  "welcomeBack": "Welcome back!",
+  "loginHeader": "Login to continue creating visions",
+  "invalidEmail": "Invalid Email",
+  "password": "Password",
+  "shortPasswordError": "Short Password",
+  "registerTitle": "Register",
+  "registerNameLabel": "What should everyone call you?",
+  "invalidUsernameError": "Invalid Username",
+  "accountInformationLabel": "Account Information",
+  "createAccountLabel": "Create Account",
+  "fileTooBigError": "The file is too big.",
+  "videoTooLongError": "This video is too long",
+  "addMediaLabel": "Add Media",
+  "labelTitleStep": "Title",
+  "labelCreditsStep": "Credits",
+  "invalidAspectRationError": "Only media in landscape format is allowed"
+}
