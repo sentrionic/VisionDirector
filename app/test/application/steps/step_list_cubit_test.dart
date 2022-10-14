@@ -22,7 +22,7 @@ void main() {
     repository = MockStepRepository();
   });
 
-  void _setUpGetStepsSuccess(List<Step> steps, String scenarioId) {
+  void setUpGetStepsSuccess(List<Step> steps, String scenarioId) {
     when(() => repository.getSteps(scenarioId)).thenAnswer(
       (_) => Future.delayed(
         const Duration(milliseconds: 1),
@@ -45,7 +45,7 @@ void main() {
 
     blocTest<StepListCubit, StepListState>(
       'emits [loadInProgress, loadSuccess] states for successful step list fetch',
-      setUp: () => _setUpGetStepsSuccess(steps, scenarioId),
+      setUp: () => setUpGetStepsSuccess(steps, scenarioId),
       build: () => mockHydratedStorage(() => StepListCubit(repository)),
       act: (cubit) => cubit.getSteps(scenarioId),
       expect: () => [
@@ -97,7 +97,7 @@ void main() {
         // arrange
         final cubit = StepListCubit(repository);
 
-        _setUpGetStepsSuccess(steps, scenarioId);
+        setUpGetStepsSuccess(steps, scenarioId);
         await cubit.getSteps(scenarioId);
 
         // act
@@ -159,7 +159,7 @@ void main() {
       mockHydratedStorage(() async {
         // arrange
         final cubit = StepListCubit(repository);
-        _setUpGetStepsSuccess([...steps, mockStep], scenarioId);
+        setUpGetStepsSuccess([...steps, mockStep], scenarioId);
         await cubit.getSteps(scenarioId);
 
         // act
@@ -205,7 +205,7 @@ void main() {
       mockHydratedStorage(() async {
         // arrange
         final cubit = StepListCubit(repository);
-        _setUpGetStepsSuccess(steps, scenarioId);
+        setUpGetStepsSuccess(steps, scenarioId);
         await cubit.getSteps(scenarioId);
 
         // act
@@ -248,7 +248,7 @@ void main() {
       mockHydratedStorage(() async {
         // arrange
         final cubit = StepListCubit(repository);
-        _setUpGetStepsSuccess([...steps, mockStep], scenarioId);
+        setUpGetStepsSuccess([...steps, mockStep], scenarioId);
         await cubit.getSteps(scenarioId);
 
         // act
@@ -291,7 +291,7 @@ void main() {
       mockHydratedStorage(() async {
         // arrange
         final cubit = StepListCubit(repository);
-        _setUpGetStepsSuccess(steps, scenarioId);
+        setUpGetStepsSuccess(steps, scenarioId);
         await cubit.getSteps(scenarioId);
 
         // act

@@ -105,7 +105,7 @@ export const TemplatesPage = (): JSX.Element => {
             try {
               const { data: newTemplate } = await createTemplate(values);
               cache.setQueryData<Template[]>([key], (data) => [
-                ...data!,
+                ...(data ?? []),
                 newTemplate,
               ]);
               toast({

@@ -55,8 +55,8 @@ class _SocketHookState extends HookState<void, _SocketHook> {
     // Arguments is of form
     // [{CommentDto}]
     connection.on("ReceiveComment", (arguments) {
-      if (arguments != null) {
-        final json = arguments.first as Map<String, dynamic>;
+      if (arguments != null && arguments.first != null) {
+        final json = arguments.first! as Map<String, dynamic>;
         final comment = CommentDto.fromJson(json).toDomain();
         context.read<CommentListCubit>().addComment(comment);
       }

@@ -54,8 +54,8 @@ class _SocketHookState extends HookState<void, _SocketHook> {
     // Arguments is of form
     // [{StepDto}]
     connection.on("ChangePosition", (arguments) {
-      if (arguments != null) {
-        final json = arguments.first as Map<String, dynamic>;
+      if (arguments != null && arguments.first != null) {
+        final json = arguments.first! as Map<String, dynamic>;
         final step = StepDto.fromJson(json).toDomain();
         context.read<StepListCubit>().updateStepPositions(step);
       }
@@ -64,8 +64,8 @@ class _SocketHookState extends HookState<void, _SocketHook> {
     // Arguments is of form
     // [[{StepDto}]]
     connection.on("AddSteps", (arguments) {
-      if (arguments != null) {
-        final results = arguments.first as List<dynamic>;
+      if (arguments != null && arguments.first != null) {
+        final results = arguments.first! as List<dynamic>;
         final List<Step> list = [];
         for (final step in results) {
           list.add(StepDto.fromJson(step).toDomain());
@@ -75,16 +75,16 @@ class _SocketHookState extends HookState<void, _SocketHook> {
     });
 
     connection.on("EditStep", (arguments) {
-      if (arguments != null) {
-        final json = arguments.first as Map<String, dynamic>;
+      if (arguments != null && arguments.first != null) {
+        final json = arguments.first! as Map<String, dynamic>;
         final step = StepDto.fromJson(json).toDomain();
         context.read<StepListCubit>().updateStep(step);
       }
     });
 
     connection.on("EditSteps", (arguments) {
-      if (arguments != null) {
-        final results = arguments.first as List<dynamic>;
+      if (arguments != null && arguments.first != null) {
+        final results = arguments.first! as List<dynamic>;
         final List<Step> list = [];
         for (final step in results) {
           list.add(StepDto.fromJson(step).toDomain());
@@ -94,16 +94,16 @@ class _SocketHookState extends HookState<void, _SocketHook> {
     });
 
     connection.on("RemoveStep", (arguments) {
-      if (arguments != null) {
-        final json = arguments.first as Map<String, dynamic>;
+      if (arguments != null && arguments.first != null) {
+        final json = arguments.first! as Map<String, dynamic>;
         final step = StepDto.fromJson(json).toDomain();
         context.read<StepListCubit>().removeStep(step);
       }
     });
 
     connection.on("ToggleLock", (arguments) {
-      if (arguments != null) {
-        final json = arguments.first as Map<String, dynamic>;
+      if (arguments != null && arguments.first != null) {
+        final json = arguments.first! as Map<String, dynamic>;
         final step = StepDto.fromJson(json).toDomain();
         context
             .read<StepListCubit>()
@@ -112,8 +112,8 @@ class _SocketHookState extends HookState<void, _SocketHook> {
     });
 
     connection.on("UpdateScenario", (arguments) {
-      if (arguments != null) {
-        final json = arguments.first as Map<String, dynamic>;
+      if (arguments != null && arguments.first != null) {
+        final json = arguments.first! as Map<String, dynamic>;
         final scenario = ScenarioDto.fromJson(json).toDomain();
         context.read<ScenarioListCubit>().updateScenario(scenario);
       }

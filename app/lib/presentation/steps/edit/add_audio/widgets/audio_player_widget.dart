@@ -17,8 +17,8 @@ class AudioPlayerWidget extends HookWidget {
         return ElevatedButton.icon(
           style: ElevatedButton.styleFrom(
             minimumSize: const Size(175, 50),
-            primary: Colors.white,
-            onPrimary: Colors.black,
+            backgroundColor: Colors.white,
+            foregroundColor: Colors.black,
           ),
           onPressed: () async {
             context.read<RecordAudioCubit>().setIsPlaying(isPlaying: true);

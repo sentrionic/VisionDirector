@@ -1,7 +1,6 @@
 using System.Text.Json.Serialization;
 using API.Extensions;
 using API.SignalR;
-using Application.Scenarios;
 using Domain;
 using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
@@ -16,10 +15,10 @@ builder.Services.AddControllers(opt =>
         var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
         opt.Filters.Add(new AuthorizeFilter(policy));
     })
-    .AddFluentValidation(config => { config.RegisterValidatorsFromAssemblyContaining<CreateScenario>(); }
-    )
     .AddJsonOptions(options =>
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+
+builder.Services.AddFluentValidationAutoValidation();
 
 builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddIdentityServices(builder.Configuration);

@@ -60,7 +60,7 @@ class _AudioRecordWidgetState extends State<AudioRecordWidget> {
             },
             style: ElevatedButton.styleFrom(
               shape: const CircleBorder(),
-              primary: Colors.white,
+              backgroundColor: Colors.white,
             ),
             child: state.isRecording
                 ? Container(

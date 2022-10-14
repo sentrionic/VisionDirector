@@ -101,7 +101,7 @@ export const UsersPage = (): JSX.Element => {
                 role: value,
               });
               cache.setQueryData<User[]>([key], (data) => [
-                ...data!,
+                ...(data ?? []),
                 {
                   username: values.username,
                   email: values.email,

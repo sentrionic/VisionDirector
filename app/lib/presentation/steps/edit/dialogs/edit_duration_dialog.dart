@@ -94,7 +94,7 @@ class _EditDurationDialog extends HookWidget {
             }
           },
           style: ElevatedButton.styleFrom(
-            primary: ThemeColors.themeBlue,
+            backgroundColor: ThemeColors.themeBlue,
           ),
           child: const Text("Save"),
         ),

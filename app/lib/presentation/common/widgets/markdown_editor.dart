@@ -10,7 +10,7 @@ class MarkdownEditor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // https://dev.to/dooven/building-a-simple-markdown-editor-with-flutter-4oi9
-    void _surroundTextSelection(String left, String right) {
+    void surroundTextSelection(String left, String right) {
       final currentTextValue = controller.value.text;
       final selection = controller.selection;
       final middle = selection.textInside(currentTextValue);
@@ -33,7 +33,7 @@ class MarkdownEditor extends StatelessWidget {
         children: [
           IconButton(
             tooltip: 'Bold',
-            onPressed: () => _surroundTextSelection(
+            onPressed: () => surroundTextSelection(
               '**',
               '**',
             ),
@@ -41,7 +41,7 @@ class MarkdownEditor extends StatelessWidget {
           ),
           IconButton(
             tooltip: 'Italics',
-            onPressed: () => _surroundTextSelection(
+            onPressed: () => surroundTextSelection(
               '__',
               '__',
             ),
@@ -49,7 +49,7 @@ class MarkdownEditor extends StatelessWidget {
           ),
           IconButton(
             tooltip: 'Strikethrough',
-            onPressed: () => _surroundTextSelection(
+            onPressed: () => surroundTextSelection(
               '~~',
               '~~',
             ),
@@ -58,7 +58,7 @@ class MarkdownEditor extends StatelessWidget {
           IconButton(
             tooltip: 'Link',
             icon: const Icon(Icons.link_sharp),
-            onPressed: () => _surroundTextSelection(
+            onPressed: () => surroundTextSelection(
               '[title](https://',
               ')',
             ),
@@ -66,7 +66,7 @@ class MarkdownEditor extends StatelessWidget {
           IconButton(
             tooltip: 'Image Link',
             icon: const Icon(Icons.image),
-            onPressed: () => _surroundTextSelection(
+            onPressed: () => surroundTextSelection(
               '![](https://',
               ')',
             ),
@@ -74,7 +74,7 @@ class MarkdownEditor extends StatelessWidget {
           IconButton(
             tooltip: 'Quote',
             icon: const Icon(Icons.format_quote),
-            onPressed: () => _surroundTextSelection(
+            onPressed: () => surroundTextSelection(
               '`',
               '`',
             ),
@@ -82,7 +82,7 @@ class MarkdownEditor extends StatelessWidget {
           IconButton(
             tooltip: 'Title',
             icon: const Icon(Icons.title),
-            onPressed: () => _surroundTextSelection(
+            onPressed: () => surroundTextSelection(
               '##',
               '',
             ),
@@ -90,7 +90,7 @@ class MarkdownEditor extends StatelessWidget {
           IconButton(
             tooltip: 'List',
             icon: const Icon(Icons.list),
-            onPressed: () => _surroundTextSelection(
+            onPressed: () => surroundTextSelection(
               '\n- ',
               '',
             ),

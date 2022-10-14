@@ -96,7 +96,7 @@ export const ProjectPage = (): JSX.Element => {
             try {
               const { data: newProject } = await createProject(values.name);
               cache.setQueryData<Project[]>(["pKey"], (data) => [
-                ...data!,
+                ...(data ?? []),
                 newProject,
               ]);
               toast({

@@ -51,16 +51,16 @@ class _SocketHookState extends HookState<void, _SocketHook> {
     await connection.start();
 
     connection.on("AddTask", (arguments) {
-      if (arguments != null) {
-        final json = arguments.first as Map<String, dynamic>;
+      if (arguments != null && arguments.first != null) {
+        final json = arguments.first! as Map<String, dynamic>;
         final task = TaskDto.fromJson(json).toDomain();
         context.read<TaskListCubit>().addTask(task);
       }
     });
 
     connection.on("EditTask", (arguments) {
-      if (arguments != null) {
-        final json = arguments.first as Map<String, dynamic>;
+      if (arguments != null && arguments.first != null) {
+        final json = arguments.first! as Map<String, dynamic>;
         final task = TaskDto.fromJson(json).toDomain();
         context.read<TaskListCubit>().updateTask(task);
       }

@@ -22,7 +22,7 @@ class LongButton extends StatelessWidget {
         Expanded(
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: ThemeColors.themeBlue,
+              backgroundColor: ThemeColors.themeBlue,
             ),
             onPressed: onClick == null
                 ? null
